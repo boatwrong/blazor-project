@@ -1,0 +1,20 @@
+﻿@page "/input"
+
+<h3>Case Input</h3>
+
+<input placeholder="case name" @bind="CaseName"/>
+<button @onclick="StartCase">Next</button>
+
+@code {
+
+    private CanaryCase newCase = new();
+    private string? CaseName;
+
+    private void StartCase()
+    {
+        if (!string.IsNullOrWhiteSpace(CaseName))
+        {
+            newCase.CaseName = CaseName;
+        }
+    }
+}
